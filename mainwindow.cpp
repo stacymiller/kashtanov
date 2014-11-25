@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<Model.h>
+#include "model.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -70,13 +70,12 @@ void MainWindow::slotReadClient()
     QTextStream os(clientSocket); // textsrteam that operates on device
     os.setAutoDetectUnicode(true);
     QString s = clientSocket->readAll();
-    int ans[10];
-    Model().simulate(s, ans, 10);
-    ui->textinfo->append("\nAnswer to client: \"" + a + "\"");
+    simulation();
+    ui->textinfo->append("\nAnswer to client: \"Hello!\"");
     os << "HTTP/1.0 200 Ok\r\n"
           "Content-Type: text/html; charset=\"utf-8\"\r\n"
           "\r\n"
-          "<h1>"<< a <<"</h1>\n"
+          "<h1>"<< "Hello!" <<"</h1>\n"
           << QDateTime::currentDateTime().toString() << "\n";
     ui->textinfo->append("ReadClient:"+s+"\n\r");
     // Если нужно закрыть сокет

@@ -14,9 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    model.cpp
+    sim.cpp \
+    model.cpp \
+    R32m.cpp
 
 HEADERS  += mainwindow.h \
-    model.h
+    sim.h \
+    model.h \
+    RAND.H
 
 FORMS    += mainwindow.ui
