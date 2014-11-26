@@ -3,6 +3,8 @@
 
 #include <QMutex>
 #include <fstream>
+#include <sstream>
+#include <iostream>
 #include <queue>
 #include <deque>
 using namespace std;
@@ -11,9 +13,10 @@ using namespace std;
 #include "model.h"
 
 ofstream out;
+QString outstr="";
 
 const int unit=1000;
-const int n=10;
+const int n=400;
 
 CGenerator::CGenerator(CMyModel* pModel) : CSimThread((CSimTimer*)pModel){
     m_pModel=pModel;
@@ -38,7 +41,7 @@ void CGenerator::Main(){
         Wait (rnunif()*(m_pUTime-m_pLTime) + m_pLTime);
         Part.t0=CurTime();
         Send(Part, pCementation);
-        out<<CurTime()<<" new "<<i+1<<endl;
+        outstr += QString::number(CurTime()) + " new " + QString::number(i+1) + "\n";
     }
 }
 
@@ -64,7 +67,7 @@ void CDevice::Main()
     Wait(rnunif()*unit);
     m_pModel->dt+=CurTime()-Part.t0;
     m_pModel->N++;
-    out<<CurTime()<<" done "<<m_pModel->N<<endl;
+    outstr += QString::number(CurTime()) + " done\n";;
   }
 }
 
@@ -86,13 +89,13 @@ void CHardeningDevice::Main(){
         if (t > 25) {
             m_pModel->dt+=t;
             m_pModel->N++;
-            out<<CurTime()<<" done "<<m_pModel->N<< " first sort" <<endl;
+            outstr += QString::number(CurTime()) + " done " + QString::number(m_pModel->N) + " first sort\n";
         } else if (t > 20) {
             Send(part, m_pModel->m_pHardening);
         } else {
             m_pModel->dt+=t;
             m_pModel->N++;
-            out<<CurTime()<<" done "<<m_pModel->N<< " second sort" <<endl;
+            outstr += QString::number(CurTime()) + " done " + QString::number(m_pModel->N) + " second sort\n";
         }
     }
 }
@@ -114,13 +117,15 @@ CMyModel::~CMyModel()
 CCementationDevice::CCementationDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 CHardeningDevice::CHardeningDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 
-void simulation()
-{ out.open("sim.out");
-  rninit(1);
-  CMyModel model;
-  model.Run();
-  
-  out<<"average="<<model.dt/model.N;
+QString simulation(){
+    outstr = "";
+    out.open("sim.out");
+    rninit(1);
+    CMyModel model;
+    model.Run();
 
-  out.close();
+    outstr += "average=" + QString::number(model.dt/model.N);
+
+    out.close();
+    return outstr;
 }

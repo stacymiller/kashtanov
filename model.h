@@ -56,4 +56,4 @@ class CMyModel : public CSimTimer
    ~CMyModel();
 };
 
-void simulation();
+QString simulation();
