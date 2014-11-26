@@ -41,6 +41,7 @@ public :
 class CHardeningDevice : public CDevice {
 public:
     void Main();
+    void sendDetailOff(double t);
     CHardeningDevice(CMyModel* pModel, double time, double timedelta);
 };
 
@@ -49,11 +50,16 @@ class CMyModel : public CSimTimer
    CDevice *m_pCementation;
    CDevice *m_pHardening;
    CGenerator *m_pGenerator;
+   QList<double> experiments;
+   double maxTime;
+   double minTime;
    double dt;
    int N;
+   int columns;
 
    CMyModel();
    ~CMyModel();
+   QString analyze();
 };
 
 QString simulation();
