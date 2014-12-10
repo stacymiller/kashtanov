@@ -1,0 +1,46 @@
+﻿Build started 21.09.2011 9:16:52.
+     1>Project "d:\My Folder\1-math\svp\tests\09XLClient2010\ServerVC\Server.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Debug\Server.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug\Server.pch" /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Debug\Server.pch" /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Server.cpp ServerDlg.cpp Socket.cpp
+         Socket.cpp
+         ServerDlg.cpp
+         Server.cpp
+     1>d:\my folder\1-math\svp\tests\09xlclient2010\servervc\server.cpp(57): warning C4996: 'CWinApp::Enable3dControls': CWinApp::Enable3dControls is no longer needed. You should remove this call.
+                 c:\program files\microsoft visual studio 10.0\vc\atlmfc\include\afxwin.h(5380) : see declaration of 'CWinApp::Enable3dControls'
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /D _AFXDLL /l"0x0409" /nologo /fo".\Debug\Server.res" Server.rc 
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\Server.exe.embed.manifest.res" .\Debug\Server_manifest.rc 
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\Server.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\Server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"d:\My Folder\1-math\svp\tests\09XLClient2010\ServerVC\Debug\Server.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\Server.lib" /MACHINE:X86 .\Debug\Server.res
+         .\Debug\Server.exe.embed.manifest.res
+         .\Debug\Server.obj
+         .\Debug\ServerDlg.obj
+         .\Debug\Socket.obj
+         .\Debug\StdAfx.obj
+     1>LINK : warning LNK4076: invalid incremental status file '.\Debug\Server.ilk' (which will be deleted); linking nonincrementally
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\Server.exe.embed.manifest" /manifest .\Debug\Server.exe.intermediate.manifest "c:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\Server.exe.embed.manifest.res" .\Debug\Server_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\Server.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\Server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"d:\My Folder\1-math\svp\tests\09XLClient2010\ServerVC\Debug\Server.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\Server.lib" /MACHINE:X86 .\Debug\Server.res
+         .\Debug\Server.exe.embed.manifest.res
+         .\Debug\Server.obj
+         .\Debug\ServerDlg.obj
+         .\Debug\Socket.obj
+         .\Debug\StdAfx.obj
+         Server.vcxproj -> d:\My Folder\1-math\svp\tests\09XLClient2010\ServerVC\.\Debug\Server.exe
+       FinalizeBuildStatus:
+         Deleting file ".\Debug\Server.unsuccessfulbuild".
+         Touching ".\Debug\Server.lastbuildstate".
+     1>Done Building Project "d:\My Folder\1-math\svp\tests\09XLClient2010\ServerVC\Server.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.59

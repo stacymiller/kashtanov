@@ -1,0 +1,75 @@
+﻿Сборка начата 10.12.2014 17:00:25.
+     1>Проект "C:\Users\st015603\Documents\11XLEvent\XLClient.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание ".\Debug\XLClient.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       Midl:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\midl.exe /D _DEBUG /mktyplib203 /W1 /nologo /char signed /env win32 /tlb ".\Debug/XLClient.tlb" XLClient.odl 
+         Processing .\XLClient.odl
+         XLClient.odl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.idl
+         oaidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\objidl.idl
+         objidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\unknwn.idl
+         unknwn.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\wtypes.idl
+         wtypes.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\basetsd.h
+         basetsd.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\guiddef.h
+         guiddef.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.acf
+         oaidl.acf
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug/XLClient.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Debug/XLClient.pch" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt excel9.cpp Socket.cpp XLClient.cpp XLClientDlg.cpp XLSink.cpp
+         XLSink.cpp
+         XLClientDlg.cpp
+     1>c:\users\st015603\documents\11xlevent\xlclientdlg.cpp(89): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(110): см. объявление "strcat"
+     1>c:\users\st015603\documents\11xlevent\xlclientdlg.cpp(89): warning C4996: '_ltoa': This function or variable may be unsafe. Consider using _ltoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(487): см. объявление "_ltoa"
+         XLClient.cpp
+     1>c:\users\st015603\documents\11xlevent\xlclient.cpp(68): warning C4996: 'CWinApp::Enable3dControlsStatic': CWinApp::Enable3dControlsStatic is no longer needed. You should remove this call.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\atlmfc\include\afxwin.h(5383): см. объявление "CWinApp::Enable3dControlsStatic"
+         Socket.cpp
+         excel9.cpp
+         Создание кода...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /l"0x0409" /I.\Debug\ /nologo /fo".\Debug\XLClient.res" XLClient.rc 
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\XLClient.exe.embed.manifest.res" .\Debug\XLClient_manifest.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/XLClient.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\XLClient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/XLClient.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\XLClient.lib" /MACHINE:X86 .\Debug\XLClient.res
+         .\Debug\XLClient.exe.embed.manifest.res
+         .\Debug/excel9.obj
+         .\Debug/Socket.obj
+         .\Debug/StdAfx.obj
+         .\Debug/XLClient.obj
+         .\Debug/XLClientDlg.obj
+         .\Debug/XLSink.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\XLClient.exe.embed.manifest" /manifest .\Debug\XLClient.exe.intermediate.manifest "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\XLClient.exe.embed.manifest.res" .\Debug\XLClient_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/XLClient.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\XLClient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/XLClient.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\XLClient.lib" /MACHINE:X86 .\Debug\XLClient.res
+         .\Debug\XLClient.exe.embed.manifest.res
+         .\Debug/excel9.obj
+         .\Debug/Socket.obj
+         .\Debug/StdAfx.obj
+         .\Debug/XLClient.obj
+         .\Debug/XLClientDlg.obj
+         .\Debug/XLSink.obj
+         XLClient.vcxproj -> C:\Users\st015603\Documents\11XLEvent\.\Debug\XLClient.exe
+       BscMake:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\bscmake.exe /nologo /o".\Debug/XLClient.bsc" .\Debug\excel9.sbr .\Debug\Socket.sbr .\Debug\StdAfx.sbr .\Debug\XLClient.sbr .\Debug\XLClientDlg.sbr .\Debug\XLSink.sbr
+       FinalizeBuildStatus:
+         Файл ".\Debug\XLClient.unsuccessfulbuild" удаляется.
+         Обращение к ".\Debug\XLClient.lastbuildstate".
+     1>Построение проекта "C:\Users\st015603\Documents\11XLEvent\XLClient.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:12.23

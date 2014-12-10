@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: XLClient - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\YNK\LOCALS~1\Temp\RSP54.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/XLClient.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\My Folder\1-math\svp\tests\8XLClient2008\XLClientDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\YNK\LOCALS~1\Temp\RSP54.tmp" 
+Creating temporary file "C:\DOCUME~1\YNK\LOCALS~1\Temp\RSP55.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/XLClient.pdb" /debug /machine:I386 /out:"Debug/XLClient.exe" /pdbtype:sept 
+".\Debug\excel9.obj"
+".\Debug\Socket.obj"
+".\Debug\StdAfx.obj"
+".\Debug\XLClient.obj"
+".\Debug\XLClientDlg.obj"
+".\Debug\XLSink.obj"
+".\Debug\XLClient.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\YNK\LOCALS~1\Temp\RSP55.tmp"
+<h3>Output Window</h3>
+Compiling...
+XLClientDlg.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+XLClient.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

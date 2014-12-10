@@ -1,0 +1,42 @@
+// XLClient.odl : type library source for XLClient.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (XLClient.tlb).
+
+[ uuid(06C955CA-062C-4731-9727-C45948F31284), version(1.0) ]
+library XLClient
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CXLClientDoc
+	
+	[ uuid(F7B5DA0B-6C24-41FF-AF7C-11A7302C83E6) ]
+	dispinterface IXLClient
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CXLClientDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CXLClientDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CXLClientDoc
+	
+	[ uuid(DF8B80F5-7E4C-4882-9D3F-4509BA1A61EA) ]
+	coclass XLClient
+	{
+		[default] dispinterface IXLClient;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

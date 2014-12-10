@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="XLClient">
+</Property><Property Name="Solution File" Value="D:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.sln">
+</Property><Property Name="User Options File" Value="D:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.suo">
+</Property><Property Name="Date" Value="21 сентября 2011 г.">
+</Property><Property Name="Time" Value="9:08">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="XLClient.sln" Description="File successfully backed up as D:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="XLClient.suo" Description="File successfully backed up as D:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.suo.old">
+</Event><Event ErrorLevel="0" Project="XLClient" Source="XLClient.vcproj" Description="Converting project file 'd:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.vcproj'.">
+</Event><Event ErrorLevel="1" Project="XLClient" Source="XLClient.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="XLClient" Source="XLClient.vcproj" Description="MSB8012: $(TargetPath) ('d:\My Folder\1-math\svp\tests\09XLClient2008\.\Debug\XLClient.exe') does not match the Linker's OutputFile property value '.\Debug/XLClient.exe' ('D:\My Folder\1-math\svp\tests\09XLClient2008\Debug/XLClient.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="XLClient" Source="XLClient.vcproj" Description="MSB8012: $(TargetPath) ('d:\My Folder\1-math\svp\tests\09XLClient2008\.\Release\XLClient.exe') does not match the Linker's OutputFile property value '.\Release/XLClient.exe' ('D:\My Folder\1-math\svp\tests\09XLClient2008\Release/XLClient.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="XLClient" Source="XLClient.vcproj" Description="Done converting to new project file 'd:\My Folder\1-math\svp\tests\09XLClient2008\XLClient.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="XLClient" Source="XLClient.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="XLClient.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="XLClient.sln" Description="Converted">
+</Event></UpgradeLog>
