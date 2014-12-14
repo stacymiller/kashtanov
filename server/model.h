@@ -2,6 +2,16 @@
 
 class CMyModel;
 
+struct modelData {
+    int N;
+    int columns;
+    double cementationTime;
+    double cementationTimedelta;
+    double hardeningTime;
+    double hardeningTimedelta;
+};
+
+
 class CPart : public CSimMsg
 { public:
 	long t0;
@@ -56,10 +66,14 @@ class CMyModel : public CSimTimer
    double dt;
    int N;
    int columns;
+   int expNumber;
 
    CMyModel();
+   CMyModel(int exp, int col);
+   CMyModel(int exp, int col, double cementationTime, double cementationTimedelta, double hardeningTime, double hardeningTimedelta);
+
    ~CMyModel();
    QString analyze();
 };
 
-QString simulation();
+QString simulation(modelData data);

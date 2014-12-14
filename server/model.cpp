@@ -38,7 +38,8 @@ CGenerator::CGenerator(CMyModel* pModel, double time, double timedelta): CSimThr
 void CGenerator::Main(){
     CPart Part;
     CDevice* pCementation=m_pModel->m_pCementation;
-    for (int i=0; i<n; i++)
+    int exp = m_pModel->expNumber;
+    for (int i=0; i<exp; i++)
     {
         Wait (rnunif()*(m_pUTime-m_pLTime) + m_pLTime);
         Part.t0=CurTime();
@@ -121,6 +122,34 @@ CMyModel::CMyModel(){
     N=0;
 }
 
+CMyModel::CMyModel(int exp, int col){
+    CMyModel(exp, col, 10., 7., 10., 6.);
+//    m_pGenerator=new CGenerator(this);
+//    m_pCementation=new CCementationDevice(this, 10., 7.);
+//    m_pHardening=new CHardeningDevice(this, 10., 6.);
+//    maxTime=numeric_limits<double>::min();
+//    minTime=numeric_limits<double>::max();
+//    this->columns=col;
+//    this->expNumber = exp;
+//    dt=0;
+//    N=0;
+//    printf("columns=%d expNumber=%d\n", columns, expNumber);
+}
+
+CMyModel::CMyModel(int exp, int col, double cementationTime, double cementationTimedelta, double hardeningTime, double hardeningTimedelta){
+    m_pGenerator=new CGenerator(this);
+    m_pCementation=new CCementationDevice(this, cementationTime, cementationTimedelta);
+    m_pHardening=new CHardeningDevice(this, hardeningTime, hardeningTimedelta);
+    maxTime=numeric_limits<double>::min();
+    minTime=numeric_limits<double>::max();
+    this->columns=col;
+    this->expNumber = exp;
+    dt=0;
+    N=0;
+    printf("columns=%d expNumber=%d\n", columns, expNumber);
+}
+
+
 CMyModel::~CMyModel()
 { delete m_pGenerator;
   delete m_pCementation;
@@ -132,12 +161,15 @@ QString CMyModel::analyze(){
         columns = 1;
     }
     int histogram[columns];
+    double averages[columns];
     for(int i = 0; i < columns; i++){
         histogram[i] = 0;
+        averages[i] = 0;
     }
     QString ans = "";
     ans += "min:" + QString::number(minTime) + "\n";
     ans += "max:" + QString::number(maxTime) + "\n";
+    ans += "sectors:" + QString::number(columns) + "\n";
     double sector = (maxTime - minTime) / columns;
     for(int i = 0; i < N; i++){
         double exp = experiments[i];
@@ -145,6 +177,7 @@ QString CMyModel::analyze(){
         for(int j = 0; j < columns; j++){
             if (exp < current){
                 histogram[j]++;
+                averages[j] = ((histogram[j] - 1)*averages[j] + exp) / histogram[j];
                 break;
             } else {
                 current += sector;
@@ -157,17 +190,23 @@ QString CMyModel::analyze(){
         ans += QString::number(histogram[i]) + ",";
     }
     ans += "\n";
+
+    ans += "averages:";
+    for(int i = 0; i < columns; i++){
+        ans += QString::number(averages[i]) + ",";
+    }
+    ans += "\n";
     return ans;
 }
 
 CCementationDevice::CCementationDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 CHardeningDevice::CHardeningDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 
-QString simulation(){
+QString simulation(modelData data){
     outstr = "";
     out.open("sim.out");
     rninit(QDateTime::currentDateTime().toTime_t());
-    CMyModel model;
+    CMyModel model(data.N, data.columns, data.cementationTime, data.cementationTimedelta, data.hardeningTime, data.hardeningTimedelta);
     model.Run();
     QString ans = model.analyze();
 

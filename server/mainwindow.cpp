@@ -65,20 +65,17 @@ void MainWindow::newuser()
 
 void MainWindow::slotReadClient()
 {
+    printf("Entered slotReadClient\n");
+
     QTcpSocket* clientSocket = (QTcpSocket*)sender(); //pointer to the object that called the slot is actually a pointer to QTcpSocket
     int idusersocs=clientSocket->socketDescriptor();
     QTextStream os(clientSocket); // textsrteam that operates on device
     os.setAutoDetectUnicode(true);
-    QString s = clientSocket->readAll();
-    QString ans = simulation();
-//    ui->textinfo->append("\nAnswer to client: \"Hello!\"");
-//    os << "HTTP/1.0 200 Ok\r\n"
-//          "Content-Type: text/html; charset=\"utf-8\"\r\n"
-//          "\r\n"
-//          "<h1>"<< "Hello!" <<"</h1>\n"
-//          << QDateTime::currentDateTime().toString() << "\n";
+    modelData * data = (struct modelData *) clientSocket->readAll().data();
+    ui->textinfo->append("Parameters from client: " + QString::number(data->N) + ", " + QString::number(data->columns));
+    //    memcpy(&data, req, sizeof(data));
+    QString ans = simulation(*data);
     os << ans;
-//    ui->textinfo->append("ReadClient:"+s+"\n\r");
     ui->textinfo->append(ans);
     clientSocket->close();
     SClients.remove(idusersocs);
