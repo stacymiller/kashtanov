@@ -41,8 +41,8 @@ void MainWindow::on_stoping_clicked()
             SClients.remove(i);
         }
         tcpServer->close();
-        ui->textinfo->append(QString::fromUtf8("Сервер остановлен!"));
-        qDebug() << QString::fromUtf8("Сервер остановлен!");
+        ui->textinfo->append(QString::fromUtf8("Server stopped"));
+        qDebug() << QString::fromUtf8("Server stopped");
         server_status=0;
     }
 }
@@ -71,14 +71,14 @@ void MainWindow::slotReadClient()
     os.setAutoDetectUnicode(true);
     QString s = clientSocket->readAll();
     QString ans = simulation();
-    ui->textinfo->append("\nAnswer to client: \"Hello!\"");
-    os << "HTTP/1.0 200 Ok\r\n"
-          "Content-Type: text/html; charset=\"utf-8\"\r\n"
-          "\r\n"
-          "<h1>"<< "Hello!" <<"</h1>\n"
-          << QDateTime::currentDateTime().toString() << "\n";
+//    ui->textinfo->append("\nAnswer to client: \"Hello!\"");
+//    os << "HTTP/1.0 200 Ok\r\n"
+//          "Content-Type: text/html; charset=\"utf-8\"\r\n"
+//          "\r\n"
+//          "<h1>"<< "Hello!" <<"</h1>\n"
+//          << QDateTime::currentDateTime().toString() << "\n";
     os << ans;
-    ui->textinfo->append("ReadClient:"+s+"\n\r");
+//    ui->textinfo->append("ReadClient:"+s+"\n\r");
     ui->textinfo->append(ans);
     clientSocket->close();
     SClients.remove(idusersocs);

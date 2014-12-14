@@ -128,6 +128,9 @@ CMyModel::~CMyModel()
 }
 
 QString CMyModel::analyze(){
+    if (columns < 0 || columns > 10000) {
+        columns = 1;
+    }
     int histogram[columns];
     for(int i = 0; i < columns; i++){
         histogram[i] = 0;
