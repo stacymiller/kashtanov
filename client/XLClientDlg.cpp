@@ -272,11 +272,7 @@ void CXLClientDlg::SetResult()
 			Range place=(Range)(m_rg.GetOffset(COleVariant((long)(i + 1)),COleVariant(0l)));
 			curResult = param.Tokenize(_T(",:"),curPos);
 			long value = (long)atoi(curResult);
-			if (value != 0){
-				place.SetValue(COleVariant(value));
-			} else {
-				break;
-			}
+			place.SetValue(COleVariant(value));
 		}
 	}
 	curResult = param.Tokenize(_T(",:"),curPos);
@@ -287,11 +283,7 @@ void CXLClientDlg::SetResult()
 			Range place=(Range)(m_rg.GetOffset(COleVariant((long)(i+1)),COleVariant(1l)));
 			curResult = param.Tokenize(_T(",:"),curPos);
 			long value = (long)atoi(curResult);
-			if (value != 0){
-				place.SetValue(COleVariant(value));
-			} else {
-				break;
-			}
+			place.SetValue(COleVariant(value));
 		}
 	}
 

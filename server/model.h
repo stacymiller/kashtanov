@@ -16,6 +16,7 @@ class CPart : public CSimMsg
 { public:
 	long t0;
     bool sort; // true - 1st sort, false - 2nd sort
+    int id;
 	CPart(int t=-1) : CSimMsg(sizeof(CPart), t) {}
 };
 
@@ -51,7 +52,7 @@ public :
 class CHardeningDevice : public CDevice {
 public:
     void Main();
-    void sendDetailOff(double t);
+    void sendDetailOff(double t, int detailId);
     CHardeningDevice(CMyModel* pModel, double time, double timedelta);
 };
 

@@ -65,8 +65,6 @@ void MainWindow::newuser()
 
 void MainWindow::slotReadClient()
 {
-    printf("Entered slotReadClient\n");
-
     QTcpSocket* clientSocket = (QTcpSocket*)sender(); //pointer to the object that called the slot is actually a pointer to QTcpSocket
     int idusersocs=clientSocket->socketDescriptor();
     QTextStream os(clientSocket); // textsrteam that operates on device
