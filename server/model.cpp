@@ -3,6 +3,7 @@
 
 #include <QMutex>
 #include <QDateTime>
+#include <QDebug>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -161,10 +162,6 @@ QString CMyModel::analyze(){
         double exp = experiments[i];
         out << exp << ", ";
         float current = minTime + sector;
-//        int j = (int) floor((exp - minTime) / sector);
-//        out << j << ", ";
-//        histogram[j]++;
-//        averages[j] = ((histogram[j] - 1)*averages[j] + exp) / histogram[j];
         for(int j = 0; j < columns; j++){
             if (exp <= current){
                 histogram[j]++;
@@ -193,13 +190,15 @@ QString CMyModel::analyze(){
 CCementationDevice::CCementationDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 CHardeningDevice::CHardeningDevice(CMyModel* pModel, double time, double timedelta) : CDevice(pModel, time, timedelta) {}
 
-QString simulation(modelData data){
+QString simulation(modelData * data){
     out.open("sim.out");
+
     rninit(QDateTime::currentDateTime().toTime_t());
-    CMyModel model(data.N, data.columns, data.cementationTime, data.cementationTimedelta, data.hardeningTime, data.hardeningTimedelta);
+    CMyModel model(data->N, data->columns, data->cementationTime, data->cementationTimedelta, data->hardeningTime, data->hardeningTimedelta);
+    qDebug() << QString::fromUtf8("Created model");
     model.Run();
     QString ans = model.analyze();
-
+    qDebug() << QString::fromUtf8("Model analysis done");
     out.close();
     return ans;
 }

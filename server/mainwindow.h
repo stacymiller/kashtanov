@@ -7,6 +7,9 @@
 #include <QObject>
 #include <QByteArray>
 #include <QDebug>
+#include "modeldata.h"
+#include "myclientsocket.h"
+
 
 namespace Ui {
     class MainWindow;
@@ -17,9 +20,10 @@ class QTcpServer;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QMap<int,MyClientSocket *> SClients;
+    Ui::MainWindow *ui;
     ~MainWindow();
 
 private slots:
@@ -29,10 +33,10 @@ private slots:
     void slotReadClient();
 
 private:
-    Ui::MainWindow *ui;
+
     QTcpServer *tcpServer;
     int server_status;
-    QMap<int,QTcpSocket *> SClients;
+
 };
 
 #endif // MAINWINDOW_H

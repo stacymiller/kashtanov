@@ -1,15 +1,9 @@
+#ifndef MODEL_H
+#define MODEL_H
 #include "sim.h"
+#include "modeldata.h"
 
 class CMyModel;
-
-struct modelData {
-    int N;
-    int columns;
-    double cementationTime;
-    double cementationTimedelta;
-    double hardeningTime;
-    double hardeningTimedelta;
-};
 
 
 class CPart : public CSimMsg
@@ -77,4 +71,6 @@ class CMyModel : public CSimTimer
    QString analyze();
 };
 
-QString simulation(modelData data);
+QString simulation(modelData * data);
+
+#endif

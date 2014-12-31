@@ -235,8 +235,12 @@ void CXLClientDlg::SendQuery(Range rg)
 		data.hardeningTimedelta = ((Range)(rg.GetOffset(COleVariant(-2l),COleVariant(4l)))).GetValue().dblVal;
 		m_pSocket->Close();
 		m_pSocket->Create();
-		if(m_pSocket->Connect(m_server, m_port))
-			m_pSocket->Send(&data, sizeof(data));
+		if(m_pSocket->Connect(m_server, m_port)) {
+			m_pSocket->Send(&data, sizeof(data)/2);
+			Sleep(1000);
+			m_pSocket->Send(((char *)&data)+sizeof(data)/2, sizeof(data)/2);
+		}
+
 	}
 }
 

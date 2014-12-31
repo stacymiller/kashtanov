@@ -16,11 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     sim.cpp \
     model.cpp \
-    R32m.cpp
+    R32m.cpp \
+    qmodelthread.cpp \
+    myclientsocket.cpp
 
 HEADERS  += mainwindow.h \
     sim.h \
     model.h \
-    RAND.H
+    RAND.H \
+    modeldata.h \
+    qmodelthread.h \
+    myclientsocket.h
 
 FORMS    += mainwindow.ui
